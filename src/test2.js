@@ -6,7 +6,7 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-const ollama = new Ollama({ host: 'http://10.10.132.178:8090' });
+const ollama = new Ollama({ host: 'http://10.10.128.10:11434' });
 
 async function run() {
   return new Promise((resolve, reject) => {

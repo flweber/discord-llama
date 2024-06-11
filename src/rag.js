@@ -183,7 +183,7 @@ class RAG {
     console.log("Request ollama...")
     let answer = "";
     const chat = await this.ollama.chat({
-      model: 'llama3',
+      model: 'llama3-chatqa',
       keep_alive: 60000,
       messages: [
         {

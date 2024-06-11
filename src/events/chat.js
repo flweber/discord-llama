@@ -16,6 +16,7 @@ module.exports = async (message, rag) => {
       console.log(`\n\nDocument: ${result.name}\nScore: ${result.score}\n\n`);
       if (result.score < 250) throw new Error("Sorry we don't have any data to your question");
       answer = await rag.answerQuestion(message.content, result.name);
+      console.log(answer);
       message.author.send(answer);
     }
   } catch (err) {

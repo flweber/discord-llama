@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { Client, Events, IntentsBitField, Collection, Partials, GatewayIntentBits } = require('discord.js');
+const { Client, Events, IntentsBitField, Collection, Partials, GatewayIntentBits, ChannelType } = require('discord.js');
 const RAG = require("./rag");
 const registerCommands = require('./registerCommands');
 const loadCommands = require('./loadCommands');
@@ -67,6 +67,6 @@ client.on(Events.InteractionCreate, async interaction => {
 
 client.on("messageCreate", async message => {
   if (message.author.bot) return;
-  else if (message.channel.type !== "dm") return;
+  else if (message.channel.type !== ChannelType.DM) return;
   chat(message, rag);
 });
